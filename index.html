@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MumzVoice — AI Voice Search Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">
+    <div class="container">
+      <div id="announcementList" class="announcement-list"></div>
+      <button id="languageToggle" class="lang-toggle" aria-label="Switch language">العربية</button>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-main">
+      <div class="logo">
+        <span class="logo-icon">☺</span>
+        <span>Mumzworld</span>
+      </div>
+      <div class="search-shell">
+        <div class="search-bar">
+          <input id="searchInput" class="search-input" type="text" placeholder="">
+          <button id="searchButton" class="search-btn">Search</button>
+          <button id="micButton" class="mic-btn" aria-label="Voice search">🎤</button>
+        </div>
+        <div id="statusPill" class="status-pill"><span id="statusText"></span></div>
+        <div class="search-meta">
+          <span id="searchHint"></span>
+          <span>120,000+ products imagined through an AI prototype</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="deliverTo" class="deliver"></span>
+        <button id="signInBtn" class="sign-btn"></button>
+        <button class="cart-btn" aria-label="Shopping cart">🛒</button>
+      </div>
+    </div>
+    <nav class="subnav">
+      <div class="container nav-list">
+        <span class="nav-pill sale" data-nav-key="sale"></span>
+        <span class="nav-pill" data-nav-key="gear"></span>
+        <span class="nav-pill" data-nav-key="bedroom"></span>
+        <span class="nav-pill" data-nav-key="feeding"></span>
+        <span class="nav-pill" data-nav-key="toys"></span>
+        <span class="nav-pill" data-nav-key="diapers"></span>
+        <span class="nav-pill" data-nav-key="outdoor"></span>
+        <span class="nav-pill" data-nav-key="bath"></span>
+        <span class="nav-pill" data-nav-key="safety"></span>
+        <span class="nav-pill" data-nav-key="fashion"></span>
+        <span class="nav-pill" data-nav-key="school"></span>
+        <span class="nav-pill" data-nav-key="mumz"></span>
+        <span class="nav-pill" data-nav-key="home"></span>
+        <span class="nav-pill" data-nav-key="pharmacy"></span>
+        <span class="nav-pill" data-nav-key="books"></span>
+        <span class="nav-pill" data-nav-key="party"></span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div>
+          <span id="heroEyebrow" class="eyebrow"></span>
+          <h1 id="heroTitle"></h1>
+          <p id="heroText"></p>
+          <div class="hero-grid">
+            <div class="hero-metric" data-metric></div>
+            <div class="hero-metric" data-metric></div>
+            <div class="hero-metric" data-metric></div>
+            <div class="hero-metric" data-metric></div>
+          </div>
+        </div>
+        <div id="heroBadge" class="hero-badge"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="results">
+    <div class="container">
+      <div class="results-head">
+        <div class="results-copy">
+          <h2 id="resultsTitle"></h2>
+          <p id="resultsSummary"></p>
+        </div>
+        <div id="resultsTag" class="result-tag"></div>
+      </div>
+      <div id="emptyState" class="empty" hidden>
+        <div class="empty-illustration">🧸</div>
+        <h3 id="emptyTitle"></h3>
+        <p id="emptyText"></p>
+      </div>
+      <section id="resultsGrid" class="results-grid"></section>
+    </div>
+  </main>
+
+  <footer class="container" style="padding:0 0 34px;color:#667085;">
+    <p id="footerNote"></p>
+  </footer>
+
+  <script>window.APP_CONFIG = window.APP_CONFIG || {};</script>
+  <script src="config.js"></script>
+  <script src="env-loader.js"></script>
+  <script src="products.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
