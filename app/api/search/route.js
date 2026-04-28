@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { heuristicParse, scoreProducts } from "../../../lib/search";
+import { heuristicParse, recommendProducts, scoreProducts } from "../../../lib/search";
 
 export async function POST(request) {
   try {
@@ -7,7 +7,8 @@ export async function POST(request) {
     const cleanQuery = query.trim();
 
     if (!cleanQuery) {
-      return NextResponse.json({ mode: "fallback", parsed: heuristicParse(""), results: scoreProducts({ categories: [], keywords: [] }, language) });
+      const featured = scoreProducts({ categories: [], keywords: [] }, language);
+      return NextResponse.json({ mode: "fallback", parsed: heuristicParse(""), results: featured, recommendations: recommendProducts(featured, language) });
     }
 
     let parsed;
@@ -53,10 +54,11 @@ export async function POST(request) {
     }
 
     const results = scoreProducts(parsed, language, mode);
-    return NextResponse.json({ mode, parsed, results });
+    const recommendations = recommendProducts(results, language);
+    return NextResponse.json({ mode, parsed, results, recommendations });
   } catch (error) {
     return NextResponse.json(
-      { mode: "fallback", parsed: heuristicParse(""), results: [], error: error.message || "search_failed" },
+      { mode: "fallback", parsed: heuristicParse(""), results: [], recommendations: [], error: error.message || "search_failed" },
       { status: 500 }
     );
   }
