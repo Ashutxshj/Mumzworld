@@ -35,3 +35,5 @@ Open `http://localhost:3000`.
 - Voice search depends on browser speech recognition support.
 - If Gemini is unavailable, the app still returns results using local search rules.
 - This uses a small demo catalog, not a live Mumzworld backend.
+
+live demo:- https://drive.google.com/file/d/1vjKTh6f5ll4oU-moGemlmE4bATEYOtZr/view?usp=sharing
