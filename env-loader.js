@@ -7,7 +7,6 @@
       const trimmed = (text || "").trim();
       if (!trimmed) return "";
 
-      // Support either GEMINI_API_KEY=value, GOOGLE_API_KEY=value, or a raw key-only file.
       if (!trimmed.includes("=")) return trimmed;
 
       let fallbackValue = "";
@@ -34,8 +33,6 @@
       if (apiKey) {
         window.APP_CONFIG.geminiApiKey = apiKey;
       }
-    } catch (_) {
-      // No-op. The app will fall back to local search.
-    }
+    } catch (_) {}
   })();
 })();
