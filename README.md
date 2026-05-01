@@ -32,6 +32,9 @@ npm run dev
 Open `http://localhost:3000`.
 
 ## Live demo
+https://mumzworld-mhsy.onrender.com/
+
+## Video demo
 https://drive.google.com/file/d/1vjKTh6f5ll4oU-moGemlmE4bATEYOtZr/view?usp=sharing
 
 ## Notes
